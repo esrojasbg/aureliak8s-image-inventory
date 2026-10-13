@@ -8,6 +8,7 @@ import { mainViewTabHostKind } from "@k8slens/main-view-contracts";
 import { getTabKindInjectableBunch, useTabId, type TabProps } from "@k8slens/tab-contracts";
 import { Table } from "@k8slens/table-contracts";
 import { useSubscribable } from "@k8slens/subscribable-react";
+import { ImageDetailOverlay } from "./image-detail-drawer";
 import { imageInventoryFiltersInjectable } from "./image-inventory-filters.injectable";
 import { imageRowsForClusterInjectable } from "./image-rows-for-cluster.injectable";
 import { imageInventoryTabKind } from "./image-inventory-tab-kind";
@@ -84,13 +85,14 @@ const ImageInventoryPage = (_props: TabProps<typeof mainViewTabHostKind>) => {
   const clusterId = useTabId(mainViewTabHostKind);
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+    <div style={{ display: "flex", flexDirection: "column", height: "100%", position: "relative" }}>
       <Suspense fallback={<Div $padding={{ ...pagePadding, top: "s", bottom: "s" }}>Calculando el resumen de imágenes…</Div>}>
         <ImageInventorySummary clusterId={clusterId} />
       </Suspense>
       <Div $padding={{ ...pagePadding, bottom: "m" }} $flexChild="shrinkable">
         <Table kind={imagesTableKind} params={[clusterId]} />
       </Div>
+      <ImageDetailOverlay clusterId={clusterId} />
     </div>
   );
 };

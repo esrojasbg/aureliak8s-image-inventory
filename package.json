@@ -1,6 +1,6 @@
 {
   "name": "aureliak8s-image-inventory",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Inventario de solo lectura de las imágenes de contenedor de un clúster: una página por clúster, una sección en el detalle de cada Pod y un aviso en la barra de estado para las que usan :latest o no tienen tag.",
   "author": "esrojasbg",
   "license": "MIT",
@@ -33,8 +33,10 @@
     "@k8slens/cluster-contracts": "^2.4.0",
     "@k8slens/details-panel-components": "^1.0.2",
     "@k8slens/details-panel-contracts": "^1.1.0",
+    "@k8slens/electron-contracts": "^1.1.0",
     "@k8slens/element-components": "^3.9.1",
     "@k8slens/feature-core": "^7.5.2",
+    "@k8slens/icon": "^4.0.0",
     "@k8slens/injectable": "^26.2.1",
     "@k8slens/input-components": "^1.0.1",
     "@k8slens/kubernetes-contracts": "^2.0.2",

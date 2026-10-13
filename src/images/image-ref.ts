@@ -56,3 +56,8 @@ export const displayTag = (parsed: ParsedImageRef): string => {
 
   return "latest";
 };
+
+// Inverso de parseImageRef para (registry, repository, tagDisplay): omite "docker.io" porque
+// parseImageRef lo asume cuando el primer segmento no tiene pinta de registro.
+export const buildImageReference = (registry: string, repository: string, tagDisplay: string): string =>
+  `${registry === "docker.io" ? "" : `${registry}/`}${repository}:${tagDisplay}`;
