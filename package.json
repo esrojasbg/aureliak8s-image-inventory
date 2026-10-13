@@ -1,0 +1,61 @@
+{
+  "name": "aureliak8s-image-inventory",
+  "version": "0.1.0",
+  "description": "Inventario de solo lectura de las imágenes de contenedor de un clúster: una página por clúster, una sección en el detalle de cada Pod y un aviso en la barra de estado para las que usan :latest o no tienen tag.",
+  "author": "esrojasbg",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esrojasbg/aureliak8s-image-inventory.git"
+  },
+  "keywords": [
+    "lens-extension",
+    "aureliak8s-extension"
+  ],
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "assets",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "lensExtension": {
+    "icon": "assets/icon.svg",
+    "banner": "assets/banner.svg"
+  },
+  "scripts": {
+    "build": "lens-types-check && lens-package-build --entry-point ./src/index.ts",
+    "clean": "rimraf dist/"
+  },
+  "dependencies": {
+    "@k8slens/badge": "^3.0.0",
+    "@k8slens/cluster-contracts": "^2.4.0",
+    "@k8slens/details-panel-components": "^1.0.2",
+    "@k8slens/details-panel-contracts": "^1.1.0",
+    "@k8slens/element-components": "^3.9.1",
+    "@k8slens/feature-core": "^7.5.2",
+    "@k8slens/injectable": "^26.2.1",
+    "@k8slens/input-components": "^1.0.1",
+    "@k8slens/kubernetes-contracts": "^2.0.2",
+    "@k8slens/main-view-contracts": "^1.3.2",
+    "@k8slens/navigator-components": "^1.0.3",
+    "@k8slens/navigator-contracts": "^2.2.0",
+    "@k8slens/status-bar-contracts": "^1.0.2",
+    "@k8slens/subscribable": "^1.2.0",
+    "@k8slens/subscribable-react": "^1.0.3",
+    "@k8slens/tab-contracts": "^1.2.0",
+    "@k8slens/table-components": "^1.0.2",
+    "@k8slens/table-contracts": "^2.0.2",
+    "@k8slens/use-inject": "^1.0.2",
+    "mobx": "^6.16.1",
+    "mobx-react": "^9.2.2",
+    "react": "^19.2.8"
+  },
+  "devDependencies": {
+    "@k8slens/package-build": "^3.0.0",
+    "@k8slens/typescript": "^8.0.0",
+    "@types/react": "^19.2.0",
+    "rimraf": "^4.4.1"
+  }
+}
